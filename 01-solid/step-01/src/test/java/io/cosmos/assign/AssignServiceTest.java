@@ -53,6 +53,6 @@ public class AssignServiceTest {
         AssignService assignService = new AssignService();
         int actual = assignService.calculateAge(customer);
         // 테스트를 실행하는 날짜 기준으로 예상 결과가 다릅니다.
-        assertEquals(35, actual);
+        assertEquals(36, actual);
     }
 }
