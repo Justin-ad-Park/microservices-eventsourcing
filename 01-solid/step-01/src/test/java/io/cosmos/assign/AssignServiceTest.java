@@ -28,7 +28,7 @@ public class AssignServiceTest {
         customers.add(customer5);
 
         for (Customer customer: customers) {
-            System.out.println(customer.getName() + "(" + assignService.calculateAge(customer) + ")");
+            System.out.println(customer.getName() + "(" + customer.getAge() + ")");
         }
         System.out.println("");
 
@@ -41,7 +41,7 @@ public class AssignServiceTest {
 
         List<Customer> filteredCustomer = assignService.assign(customers, surveyors);
         for (Customer customer: filteredCustomer) {
-            System.out.println(customer.getName() + "(" + assignService.calculateAge(customer) + "): " + customer.getSurveyorId());
+            System.out.println(customer.getName() + "(" + customer.getAge() + "): " + customer.getSurveyorId());
         }
 
         assertEquals("S2", filteredCustomer.get(1).getSurveyorId());

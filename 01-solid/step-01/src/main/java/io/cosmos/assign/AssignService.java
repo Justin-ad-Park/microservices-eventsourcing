@@ -15,7 +15,7 @@ public class AssignService {
 
         // 1. 30세 이상 고객 추출
         for (Customer customer: customers) {
-            if (this.calculateAge(customer) > 30) {
+            if (customer.getAge() > 30) {
                 filteredCustomer.add(customer);
             }
         }
@@ -24,7 +24,7 @@ public class AssignService {
         filteredCustomer.sort(new Comparator<Customer>() {
             @Override
             public int compare(Customer customer1, Customer customer2) {
-                return calculateAge(customer1).compareTo(calculateAge(customer2));
+                return Integer.compare(customer1.getAge(), customer2.getAge());
             }
         });
 
@@ -37,12 +37,5 @@ public class AssignService {
         }
 
         return filteredCustomer;
-    }
-
-    /*
-        나이 계산 로직 - 연도만 사용해서 단순하게 나이 계산
-     */
-    public Integer calculateAge(Customer customer) {
-        return customer.getBirthday().getAge();
     }
 }

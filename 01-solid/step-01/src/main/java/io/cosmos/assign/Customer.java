@@ -25,4 +25,8 @@ public class Customer {
         this.birthday = new Birthday(birthday);
         this.gender = gender;
     }
+
+    public int getAge() {
+        return this.getBirthday().getAge();
+    }
 }
