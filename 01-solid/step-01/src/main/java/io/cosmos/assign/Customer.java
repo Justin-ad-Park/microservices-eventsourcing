@@ -13,6 +13,11 @@ public class Customer {
     private String name;
 
     private Birthday birthday;
+
+    /**
+     *  연락처를 값 객체로 분리한다.
+     *  1. 유선전화(LandLine, MobilePhone은 Enum으로 구분)
+     */
     private String landlinePhone;
     private String mobilePhone;
     private String gender;
