@@ -11,13 +11,12 @@ public class Birthday {
 
 
     public Birthday(String birthdayStr) {
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-//        this.birthday = LocalDate.parse(birthdayStr, formatter);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+        this.birthday = LocalDate.parse(birthdayStr, formatter);
     }
 
     public int getAge() {
-        return 0;
-//        LocalDate today = LocalDate.now();
-//        return today.getYear() - birthday.getYear();
+        LocalDate today = LocalDate.now();
+        return today.getYear() - birthday.getYear();
     }
 }
