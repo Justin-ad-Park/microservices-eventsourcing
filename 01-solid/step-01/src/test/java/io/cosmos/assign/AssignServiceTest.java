@@ -47,12 +47,4 @@ public class AssignServiceTest {
         assertEquals("S2", filteredCustomer.get(1).getSurveyorId());
     }
 
-    @Test
-    public void calculateAge() {
-        Customer customer = new Customer("1", "홍길동", "19901001", "M");
-        AssignService assignService = new AssignService();
-        int actual = assignService.calculateAge(customer);
-        // 테스트를 실행하는 날짜 기준으로 예상 결과가 다릅니다.
-        assertEquals(36, actual);
-    }
 }

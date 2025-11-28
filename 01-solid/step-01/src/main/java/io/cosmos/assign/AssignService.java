@@ -43,21 +43,6 @@ public class AssignService {
         나이 계산 로직 - 연도만 사용해서 단순하게 나이 계산
      */
     public Integer calculateAge(Customer customer) {
-        String year = customer.getBirthday().substring(0, 4);
-        String month = customer.getBirthday().substring(5, 6);
-        String day = customer.getBirthday().substring(7, 8);
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, Integer.valueOf(year));
-        calendar.set(Calendar.MONTH, Integer.valueOf(month)-1);
-        calendar.set(Calendar.DAY_OF_MONTH, Integer.valueOf(day));
-
-        Date birthDate = calendar.getTime();
-
-        Calendar birthdayCalendar = Calendar.getInstance();
-        birthdayCalendar.setTime(birthDate);
-        Calendar todayCalendar = Calendar.getInstance();
-
-        return todayCalendar.get(Calendar.YEAR) - birthdayCalendar.get(Calendar.YEAR);
+        return customer.getBirthday().getAge();
     }
 }

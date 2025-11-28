@@ -12,7 +12,7 @@ public class Customer {
     private String id;
     private String name;
 
-    private String birthday;
+    private Birthday birthday;
     private String landlinePhone;
     private String mobilePhone;
     private String gender;
@@ -22,7 +22,7 @@ public class Customer {
     public Customer(String id, String name, String birthday, String gender) {
         this.id = id;
         this.name = name;
-        this.birthday = birthday;
+        this.birthday = new Birthday(birthday);
         this.gender = gender;
     }
 }

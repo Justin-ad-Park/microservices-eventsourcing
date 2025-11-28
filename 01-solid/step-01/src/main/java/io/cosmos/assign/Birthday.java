@@ -1,10 +1,7 @@
 package io.cosmos.assign;
 
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Birthday {
     private LocalDate birthday;
