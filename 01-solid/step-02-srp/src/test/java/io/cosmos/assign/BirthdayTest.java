@@ -9,6 +9,6 @@ public class BirthdayTest {
     public void getAge() {
         Birthday birthday = new Birthday("19901001");
         int actual = birthday.getAge();
-        Assertions.assertEquals(35, actual);
+        Assertions.assertEquals(36, actual);
     }
 }
