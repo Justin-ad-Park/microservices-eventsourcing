@@ -2,8 +2,8 @@ package io.cosmos.assign;
 
 import io.cosmos.assign.assignrule.AgeFilter;
 import io.cosmos.assign.assignrule.Filterable;
-import io.cosmos.assign.comparator.AgeAssignComparator;
-import io.cosmos.assign.comparator.AssignComparator;
+import io.cosmos.assign.comparator.AgeAssignSortor;
+import io.cosmos.assign.comparator.AssignSortable;
 import io.cosmos.assign.distribute.Distributable;
 import io.cosmos.assign.distribute.RoundRobinDistributor;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ public class AssignServiceTest {
     public void assign() {
 
         Filterable assignRule = new AgeFilter(30, 100);
-        AssignComparator comparator = new AgeAssignComparator();
+        AssignSortable comparator = new AgeAssignSortor();
         Distributable distributable = new RoundRobinDistributor();
 
         AssignService assignService = new AssignService(assignRule, comparator, distributable);
