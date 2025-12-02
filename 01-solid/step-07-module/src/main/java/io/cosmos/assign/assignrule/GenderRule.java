@@ -2,7 +2,7 @@ package io.cosmos.assign.assignrule;
 
 import io.cosmos.assign.customer.Customer;
 
-public class GenderRule implements Filterable, Sortable {
+public class  GenderRule implements Filterable, Sortable {
 
     private String gender;
 

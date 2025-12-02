@@ -2,7 +2,7 @@ package io.cosmos.assign.assignrule;
 
 import io.cosmos.assign.Customer;
 
-public class AgeAssignRule implements AssignRule {
+public class AgeAssignRule implements FilterRule {
     private int minAge;
     private int maxAge;
 

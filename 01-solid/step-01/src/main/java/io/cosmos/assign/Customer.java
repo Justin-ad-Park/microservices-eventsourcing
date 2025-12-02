@@ -31,7 +31,7 @@ public class Customer {
     private Contact mobilePhone;
     private String gender;
 
-    public int getAge() {
+    public Integer getAge() {
         return this.getBirthday().getAge();
     }
 }
