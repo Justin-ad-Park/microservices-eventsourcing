@@ -1,7 +1,7 @@
 package io.cosmos.assign;
 
-import io.cosmos.assign.assignrule.AgeAssignRule;
-import io.cosmos.assign.assignrule.AssignRule;
+import io.cosmos.assign.assignrule.AgeFilter;
+import io.cosmos.assign.assignrule.Filterable;
 import io.cosmos.assign.comparator.AgeAssignComparator;
 import io.cosmos.assign.comparator.AssignComparator;
 import io.cosmos.assign.distribute.Distributable;
@@ -9,7 +9,6 @@ import io.cosmos.assign.distribute.RoundRobinDistributor;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,7 +18,7 @@ public class AssignServiceTest {
     @Test
     public void assign() {
 
-        AssignRule assignRule = new AgeAssignRule(30, 100);
+        Filterable assignRule = new AgeFilter(30, 100);
         AssignComparator comparator = new AgeAssignComparator();
         Distributable distributable = new RoundRobinDistributor();
 
