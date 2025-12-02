@@ -39,12 +39,12 @@ public class AssignServiceTest {
         surveyors.add(surveyor1);
         surveyors.add(surveyor2);
 
-        List<Customer> filteredCustomer = assignService.assign(customers, surveyors);
-        for (Customer customer: filteredCustomer) {
-            System.out.println(customer.getName() + "(" + customer.getAge() + "): " + customer.getSurveyorId());
+        List<Assign> filteredAssign = assignService.assign(customers, surveyors);
+        for (Assign assign: filteredAssign) {
+            System.out.println(assign.getCustomer().getName() + "(" + assign.getCustomer().getAge() + "): " + assign.getSurveyor().getId());
         }
 
-        assertEquals("S2", filteredCustomer.get(1).getSurveyorId());
+        assertEquals("S2", filteredAssign.get(1).getSurveyor().getId());
     }
 
 }

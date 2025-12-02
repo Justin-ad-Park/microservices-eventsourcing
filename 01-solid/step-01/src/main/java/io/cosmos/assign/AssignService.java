@@ -10,7 +10,7 @@ public class AssignService {
         3. 설문 조사원에게 순차적으로 배정(분배)한다.
 
      */
-    public List<Customer> assign(List<Customer> customers, List<Surveyor> surveyors) {
+    public List<Assign> assign(List<Customer> customers, List<Surveyor> surveyors) {
         List<Customer> filteredCustomer = new ArrayList<>();
 
         // 1. 30세 이상 고객 추출
@@ -30,12 +30,14 @@ public class AssignService {
 
         // 3. 설문 조사원을 순차적으로 배정
         int i = 0;
+        List<Assign> assigns = new ArrayList<>();
         for (Customer customer: filteredCustomer) {
             Surveyor surveyor = surveyors.get(i % surveyors.size());
-            customer.setSurveyorId(surveyor.getId());
+            Assign newAssign = new Assign(customer, surveyor);
+            assigns.add(newAssign);
             i++;
         }
 
-        return filteredCustomer;
+        return assigns;
     }
 }
