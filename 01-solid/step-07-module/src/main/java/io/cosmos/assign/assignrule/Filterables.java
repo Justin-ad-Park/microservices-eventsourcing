@@ -1,4 +1,4 @@
-package io.cosmos.assign.rule;
+package io.cosmos.assign.assignrule;
 
 import io.cosmos.assign.customer.Customer;
 

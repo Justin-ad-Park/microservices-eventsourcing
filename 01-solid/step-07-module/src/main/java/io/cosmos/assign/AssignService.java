@@ -6,8 +6,8 @@ import io.cosmos.assign.assign.repository.AssignDao;
 import io.cosmos.assign.customer.Customer;
 import io.cosmos.assign.customer.repository.CustomerDao;
 import io.cosmos.assign.distribute.Distributable;
-import io.cosmos.assign.rule.Filterables;
-import io.cosmos.assign.rule.Sortables;
+import io.cosmos.assign.assignrule.Filterables;
+import io.cosmos.assign.assignrule.Sortables;
 import io.cosmos.assign.surveyor.Surveyor;
 import io.cosmos.assign.surveyor.repository.SurveyorDao;
 
