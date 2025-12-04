@@ -1,5 +1,9 @@
 package commerce.cart;
 
+import commerce.cart.event.ItemAdded;
+import commerce.cart.event.ItemRemoved;
+import commerce.cart.event.QuantityChanged;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +22,8 @@ public class Cart {
 
     public void addItem(String productNo, String productName, int quantity) {
         this.items.add(new Item(productNo, productName, quantity));
+        ItemAdded event = new ItemAdded(productNo, productName, quantity);
+        this.events.add(event);
     }
 
     public void changeQuantity(String productNo, int quantity) {
@@ -26,6 +32,10 @@ public class Cart {
             return;
         }
         foundItem.get().changeQuantity(quantity);
+
+        QuantityChanged event = new QuantityChanged(productNo, quantity);
+        this.events.add(event);
+
     }
 
     private Optional<Item> findItem(String productNo) {
@@ -34,8 +44,17 @@ public class Cart {
 
     public void removeltem(String productNo) {
         Optional<Item> foundItem = this.findItem(productNo);
-        if (foundItem.isPresent()) {
-            this.items.remove(foundItem.get());
+        if(foundItem.isEmpty()) {
+            return;
         }
+
+        this.items.remove(foundItem.get());
+
+        ItemRemoved event = new ItemRemoved(productNo);
+        this.events.add(event);
+    }
+
+    public List<Object> getEvents() {
+        return this.events;
     }
 }

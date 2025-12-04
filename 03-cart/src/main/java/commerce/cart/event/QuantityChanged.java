@@ -4,7 +4,7 @@ public class QuantityChanged extends BaseEvent {
     private String productNo;
     private int quantity;
 
-    private QuantityChanged(String productNo, int quantity) {
+    public QuantityChanged(String productNo, int quantity) {
         this.productNo = productNo;
         this.quantity = quantity;
     }
