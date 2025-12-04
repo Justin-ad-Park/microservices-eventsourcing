@@ -8,9 +8,12 @@ public class Cart {
     private String cartId;
     private List<Item> items;
 
+    private List<Object> events;
+
     public Cart(String cartid) {
         this.cartId = cartId;
         this.items = new ArrayList<>();
+        this.events = new ArrayList<>();
     }
 
     public void addItem(String productNo, String productName, int quantity) {
